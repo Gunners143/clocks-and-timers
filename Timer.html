@@ -12,9 +12,22 @@
   </header>
 
   <main>
-    <div id="clock">    00:00:00  </div>
-    <div id ="Date"> </div>
-<button id="toggle-format"> Switch to 12-hour clock </button>
+    <p>This is a starter template for fast static site deployment.</p>
+    <h2 id="timer-display">00:00</h2>
+<input
+  type="number"
+  id="minutes-input"
+  placeholder="Minutes"
+  min="1"
+/>
+
+<button id="start-timer">
+  Start Timer
+</button>
+
+    <button id="toggle-format">
+  Switch to 24-hour clock
+</button>
 
 <p id="status"></p>
 
@@ -23,6 +36,6 @@
   <footer>
     <p>&copy; 2026 Your Name</p>
   </footer>
-<script src="js/clock.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
