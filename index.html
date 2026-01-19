@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Site</title>
-  </head>
-  <body>
-    <h1>Hello world</h1>
-    <p>My site is live.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clocks and Timers</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>Hello World, it's Sam!</h1>
+  </header>
+
+  <main>
+    <p>This is a starter template for fast static site deployment.</p>
+    <h2 id="timer-display">00:00</h2>
+<input
+  type="number"
+  id="minutes-input"
+  placeholder="Minutes"
+  min="1"
+/>
+
+<button id="start-timer">
+  Start Timer
+</button>
+
+    <button id="toggle-format">
+  Switch to 24-hour clock
+</button>
+
+<p id="status"></p>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Your Name</p>
+  </footer>
+<script src="main.js"></script>
+</body>
 </html>
