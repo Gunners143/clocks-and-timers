@@ -261,7 +261,7 @@ button:disabled{
 /* Ad slot with reserved space (prevents layout shift) */
 .ad-slot{
   margin-top: var(--space-4);
-  min-height: 250px;
+  min-height: 100px;
   background: #eee;
   border: 1px dashed #d5d5d5;
   border-radius: var(--radius);
