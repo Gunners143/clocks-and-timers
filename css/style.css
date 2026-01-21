@@ -65,6 +65,7 @@ h1 {
 /* Ad slot */
 .ad-slot {
   min-height: 100px;
+  max-height: 125px;
   background: #eee;
   border-radius: 8px;
   display: flex;
@@ -262,6 +263,7 @@ button:disabled{
 .ad-slot{
   margin-top: var(--space-4);
   min-height: 100px;
+  max-height: 125px;
   background: #eee;
   border: 1px dashed #d5d5d5;
   border-radius: var(--radius);
