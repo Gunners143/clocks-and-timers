@@ -1,24 +1,32 @@
+<nav class = "nav">
+<a href="index.html" class="active">Clock</a>
+<a href="timer.html">Timer</a>
+<a href="stopwatch.html">Stopwatch</a>
+</nav>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<main class="container">
   <meta charset="UTF-8">
   <title>Clock</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <header>
-    <h1>Digital clock</h1>
-  </header>
 
-  <main>
+  <section class="tool">
     <div id="clock">   00:00:00  </div>
     <div id ="Date"> </div>
 <button id="toggleFormat"> Switch to 12-hour clock </button>
 
 <p id="status"></p>
+<p id="dateDisplay"></p>
+<p id="timezoneDisplay"></p>
+  </section>
 
-  </main>
+<section class="ad-slot">
+    <p class="ad-label">Advertisement</p>
+    <div class="ad-box">Ad space</div>
+  </section>
+</main>
 
   <footer>
     <p>&copy; 2026 Your Name</p>

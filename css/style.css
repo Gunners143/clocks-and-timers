@@ -1,39 +1,303 @@
-/* Basic styling for starter template */
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f8f8f8;
-  color: #333;
-}
-
-header, footer {
-  background-color: #333;
-  color: white;
   text-align: center;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
   padding: 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-main {
-  padding: 2rem;
+nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
 }
 
-#clock {
-  font-size: 4rem;
-  letter-spacing: 3px;
-  margin-top: 20px;
+nav a:hover {
+  color: #222;
 }
 
-#date {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #ccc;
+nav a.active {
+  color: #222;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.25rem;
+}
+
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Tool area */
+.tool {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Ad slot */
+.ad-slot {
+  min-height: 100px;
+  background: #eee;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.9rem;
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 16px;
+  padding: 0.6rem 1.2rem;
+  margin: 0.25rem;
   font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
   cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+#clock {
+  font-size: 10rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#timerDisplay,
+#stopwatchDisplay {
+  font-size: 10rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  nav {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tool {
+    padding: 2rem 1rem;
+  }
+
+  button {
+    width: 100%;
+    max-width: 280px;
+    margin: 0.4rem auto;
+    display: block;
+  }
+
+  input {
+    width: 100%;
+    max-width: 120px;
+    margin: 0.25rem auto;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Base reset */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* Theme tokens (easy consistency) */
+:root{
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --border: #e6e6e6;
+  --accent: #3b82f6;
+
+  --radius: 12px;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* Nav (mobile-first) */
+.nav{
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav a{
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+}
+
+.nav a.active{
+  color: var(--text);
+  background: rgba(59,130,246,0.12);
+}
+
+/* Main container */
+.container{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+}
+
+h1{
+  font-size: 1.35rem;
+  margin: 0 0 var(--space-4);
+}
+
+/* Tool card */
+.tool{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5) var(--space-3);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Make the tool display feel like the hero */
+#clock, #timerDisplay, #stopwatchDisplay{
+  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-4);
+}
+
+/* Inputs and buttons (tap-friendly) */
+input, button{
+  font: inherit;
+}
+
+input{
+  width: 100%;
+  max-width: 220px;
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  text-align: center;
+  margin: 0.35rem auto;
+  display: block;
+}
+
+button{
+  width: 100%;
+  max-width: 280px;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0.45rem auto;
+  display: block;
+}
+
+button:active{
+  transform: translateY(1px);
+}
+
+button:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Ad slot with reserved space (prevents layout shift) */
+.ad-slot{
+  margin-top: var(--space-4);
+  min-height: 250px;
+  background: #eee;
+  border: 1px dashed #d5d5d5;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* Desktop enhancements */
+@media (min-width: 700px){
+  .nav{ gap: var(--space-3); }
+
+  /* Put timer inputs side-by-side if you wrap them (optional) */
+  .row{
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .row input{
+    width: 160px;
+    margin: 0;
+  }
+
+  /* Buttons can sit side-by-side if wrapped */
+  .buttons{
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+  }
+  .buttons button{
+    width: 200px;
+    margin: 0;
+  }
 }

@@ -1,41 +1,40 @@
+<nav class = "nav">
+<a href="index.html">Clock</a>
+<a href="timer.html" class="active">Timer</a>
+<a href="stopwatch.html">Stopwatch</a>
+</nav>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<main class="container">
   <meta charset="UTF-8">
-  <title>Clock</title>
+  <title>Timer</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <header>
-    <h1>Digital clock</h1>
-  </header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <main>
-    <p>This is a starter template for fast static site deployment.</p>
-    <h2 id="timer-display">00:00</h2>
-<input
-  type="number"
-  id="minutes-input"
-  placeholder="Minutes"
-  min="1"
-/>
 
-<button id="start-timer">
-  Start Timer
-</button>
+<section class="tool">
 
-    <button id="toggle-format">
-  Switch to 24-hour clock
-</button>
+<h1 id="timerDisplay">00:00:00</h1>
+<div class = "row">
+<input type="number" id="hours" placeholder="Hours" min="0">
+<input type="number" id="minutes" placeholder="Minutes" min="0">
+<input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+</div>
 
-<p id="status"></p>
+<button id="startTimer">Start</button>
+<button id="resetTimer">Reset</button>
+</section>
 
-  </main>
+<section class="ad-slot">
+    <p class="ad-label">Advertisement</p>
+    <div class="ad-box">Ad space</div>
+  </section>
+</main>
 
   <footer>
     <p>&copy; 2026 Your Name</p>
   </footer>
-<script src="js/main.js"></script>
+<script src="js/Timer.js"></script>
 </body>
 </html>
