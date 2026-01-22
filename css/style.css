@@ -1,130 +1,25 @@
-/* Reset */
+/* =========================
+   Base / Reset
+========================= */
 * {
   box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: #f7f7f7;
   color: #222;
   line-height: 1.4;
+  text-align: center; /* keep your “everything centered” default */
 }
 
-/* Navigation */
-
-nav a:hover {
-  color: #222;
-}
-
-
-/* Main container */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem 1rem;
-  text-align: center;
-}
-
-/* Title */
-h1 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
-/* Tool area */
-.tool {
-  background: #fff;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-/* Ad slot */
-.ad-slot {
-  min-height: 100px;
-  max-height: 125px;
-  background: #eee;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-size: 0.9rem;
-}
-
-button {
-  padding: 0.6rem 1.2rem;
-  margin: 0.25rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background: #fff;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #f0f0f0;
-}
-
-#clock {
-  font-size: 30rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-#timerDisplay,
-#stopwatchDisplay {
-  font-size: 30rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 600px) {
-  nav {
-    gap: 1rem;
-    padding: 0.75rem;
-    padding-top: calc(0.75rem + env(safe-area-inset-top));
-  }
-
-  .container {
-    padding: 1.5rem 1rem;
-  }
-
-  h1 {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .tool {
-    padding: 2rem 1rem;
-  }
-
-  button {
-    width: 100%;
-    max-width: 280px;
-    margin: 0.4rem auto;
-    display: block;
-  }
-
-  input {
-    width: 100%;
-    max-width: 120px;
-    margin: 0.25rem auto;
-    display: block;
-    text-align: center;
-    font-size: 16px;
-  }
-}
-
-/* Base reset */
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-
-/* Theme tokens (easy consistency) */
-:root{
+/* Theme tokens (optional but useful) */
+:root {
   --bg: #f7f7f7;
   --card: #ffffff;
   --text: #222;
@@ -133,6 +28,8 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   --accent: #3b82f6;
 
   --radius: 12px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04);
+
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
@@ -140,19 +37,15 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   --space-5: 2rem;
 }
 
-body{
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.4;
-}
-
-/* Nav (mobile-first) */
-.nav{
+/* =========================
+   Navigation
+========================= */
+.nav {
   display: flex;
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-2);
-  padding-top: calc(0.75rem + env(safe-area-inset-top));
+  padding-top: calc(var(--space-2) + env(safe-area-inset-top));
   background: var(--card);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -160,7 +53,7 @@ body{
   z-index: 10;
 }
 
-.nav a{
+.nav a {
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
@@ -168,36 +61,45 @@ body{
   border-radius: 999px;
 }
 
-.nav a.active{
+.nav a:hover {
   color: var(--text);
-  background: rgba(59,130,246,0.12);
 }
 
-/* Main container */
-.container{
-  max-width: 720px;
+.nav a.active {
+  color: var(--text);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+/* =========================
+   Layout
+========================= */
+.container {
+  max-width: 1000px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-3);
-  text-align: center;
 }
 
-h1{
+h1 {
   font-size: 1.35rem;
   margin: 0 0 var(--space-4);
+  font-weight: 700;
 }
 
-/* Tool card */
-.tool{
+.tool {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: var(--space-5) var(--space-3);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow);
 }
 
-/* Make the tool display feel like the hero */
-#clock, #timerDisplay, #stopwatchDisplay{
-  font-size: clamp(3rem, 10vw, 7.5rem);
+/* =========================
+   Time Displays (Clock/Timer/Stopwatch)
+========================= */
+#clock,
+#timerDisplay,
+#stopwatchDisplay {
+  font-size: clamp(3rem, 10vw, 7.5rem); /* bigger on mobile + desktop */
   font-weight: 800;
   letter-spacing: 0.02em;
   line-height: 1.05;
@@ -205,14 +107,24 @@ h1{
   font-variant-numeric: tabular-nums;
 }
 
-
-/* Inputs and buttons (tap-friendly) */
-input, button{
-  font: inherit;
-  font-size: 16px;
+/* Date/Timezone text */
+#dateDisplay,
+#timezoneDisplay {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
 }
 
-input{
+/* =========================
+   Inputs & Buttons
+========================= */
+input,
+button {
+  font: inherit;
+  font-size: 16px; /* prevents iOS zoom on input focus */
+}
+
+input {
   width: 100%;
   max-width: 220px;
   padding: 0.8rem 0.9rem;
@@ -222,10 +134,9 @@ input{
   text-align: center;
   margin: 0.35rem auto;
   display: block;
-  font-size: 16px;
 }
 
-button{
+button {
   width: 100%;
   max-width: 280px;
   padding: 0.85rem 1rem;
@@ -238,21 +149,46 @@ button{
   display: block;
 }
 
-button:active{
+button:hover {
+  background: #f0f0f0;
+}
+
+button:active {
   transform: translateY(1px);
 }
 
-button:disabled{
+button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Ad slot with reserved space (prevents layout shift) */
+/* Optional wrappers for layout */
+.row {
+  margin-top: var(--space-2);
+}
+
+.buttons {
+  margin-top: var(--space-3);
+}
+
+/* =========================
+   Ad Slot (Label above box, not side-by-side)
+========================= */
 .ad-slot {
   width: 100%;
-  border-radius: var(--radius);
-  overflow: hidden;
   margin-top: var(--space-4);
+
+  display: flex;
+  flex-direction: column;  /* stacks label then ad */
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ad-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .ad-box {
@@ -260,61 +196,80 @@ button:disabled{
   min-height: 100px; /* mobile default */
   background: #eee;
   border: 1px dashed #d5d5d5;
+  border-radius: var(--radius);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  color: #888;
 }
 
-/* Desktop: reserve bigger space */
+/* Desktop: reserve bigger space for better ad inventory */
 @media (min-width: 700px) {
-  .ad-box { min-height: 250px; }
+  .ad-box {
+    min-height: 250px;
+  }
 }
 
-/* Desktop enhancements */
-@media (min-width: 700px){
-  .nav{ gap: var(--space-3); }
+/* =========================
+   Desktop Enhancements
+========================= */
+@media (min-width: 700px) {
+  .nav {
+    gap: var(--space-3);
+  }
 
-  /* Put timer inputs side-by-side if you wrap them (optional) */
-  .row{
+  /* Inputs side-by-side on wider screens */
+  .row {
     display: flex;
     justify-content: center;
     gap: var(--space-2);
     flex-wrap: wrap;
   }
-  .row input{
+
+  .row input {
     width: 160px;
     margin: 0;
   }
 
-  /* Buttons can sit side-by-side if wrapped */
-  .buttons{
+  /* Buttons side-by-side on wider screens */
+  .buttons {
     display: flex;
     justify-content: center;
     gap: var(--space-2);
     flex-wrap: wrap;
-    margin-top: var(--space-2);
   }
-  .buttons button{
+
+  .buttons button {
     width: 200px;
     margin: 0;
   }
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible {
+/* =========================
+   Accessibility / Polishing
+========================= */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto; }
-  button:active { transform: none; }
+  button:active {
+    transform: none;
+  }
 }
 
-
+/* =========================
+   Footer
+========================= */
 .footer {
   padding: 1.5rem 1rem;
   text-align: center;
-  color: var(--muted, #666);
+  color: var(--muted);
 }
 
 .footer a {

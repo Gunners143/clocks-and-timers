@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stopwatch</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-<nav class = "nav">
-<a href="index.html">Clock</a>
-<a href="timer.html">Timer</a>
-<a href="stopwatch.html" class="active">Stopwatch</a>
-</nav>
+  <nav class="nav">
+    <a href="index.html">Clock</a>
+    <a href="timer.html">Timer</a>
+    <a href="stopwatch.html" class="active">Stopwatch</a>
+  </nav>
 
-<main>
-<section class = "tool">
+  <main class="container">
+    <section class="tool">
+      <div id="stopwatchDisplay">00:00:00.000</div>
 
-<h1 id="stopwatchDisplay">00:00:00.000</h1>
+      <div class="buttons">
+        <button id="toggleStopwatch">Start</button>
+        <button id="resetStopwatch">Reset</button>
+      </div>
+    </section>
 
-<button id="toggleStopwatch">Start</button>
-<button id="resetStopwatch">Reset</button>
-</section>
+    <section class="ad-slot">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-box">Ad space</div>
+    </section>
+  </main>
 
-<section class="ad-slot">
-    <p class="ad-label">Advertisement</p>
-    <div class="ad-box">Ad space</div>
-  </section>
-</main>
-
-  <footer class = "footer">
+  <footer class="footer">
     <p>&copy; 2026 Sam Britcher</p>
+    <p>
       <a href="about.html">About</a> ·
       <a href="privacy.html">Privacy</a> ·
       <a href="contact.html">Contact</a>
     </p>
   </footer>
-<script src="js/stopwatch.js"></script>
+
+  <script src="js/stopwatch.js"></script>
 </body>
 </html>
