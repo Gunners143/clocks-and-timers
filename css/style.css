@@ -74,10 +74,11 @@ body {
    Layout
 ========================= */
 .container {
-  max-width: 1000px;
+  width: min(1400px, 100%);
   margin: 0 auto;
   padding: var(--space-4) var(--space-3);
 }
+
 
 h1 {
   font-size: 1.35rem;
