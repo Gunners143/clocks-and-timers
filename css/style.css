@@ -266,18 +266,26 @@ button:disabled{
 }
 
 /* Ad slot with reserved space (prevents layout shift) */
-.ad-slot{
+.ad-slot {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
   margin-top: var(--space-4);
-  min-height: 100px;
-  max-height: 125px;
+}
+
+.ad-box {
+  width: 100%;
+  min-height: 100px; /* mobile default */
   background: #eee;
   border: 1px dashed #d5d5d5;
-  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
-  font-size: 0.95rem;
+}
+
+/* Desktop: reserve bigger space */
+@media (min-width: 700px) {
+  .ad-box { min-height: 250px; }
 }
 
 /* Desktop enhancements */
@@ -318,4 +326,21 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto; }
   button:active { transform: none; }
+}
+
+
+.footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--muted, #666);
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
