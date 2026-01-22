@@ -14,30 +14,9 @@ body {
 }
 
 /* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  padding-top: calc(0.75rem + env(safe-area-inset-top));
-}
-
-nav a {
-  text-decoration: none;
-  color: #666;
-  font-weight: 500;
-}
 
 nav a:hover {
   color: #222;
-}
-
-nav a.active {
-  color: #222;
-  border-bottom: 2px solid #3b82f6;
-  padding-bottom: 0.25rem;
 }
 
 
@@ -91,14 +70,14 @@ button:hover {
 }
 
 #clock {
-  font-size: 10rem;
+  font-size: 30rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 #timerDisplay,
 #stopwatchDisplay {
-  font-size: 10rem;
+  font-size: 30rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -218,11 +197,14 @@ h1{
 
 /* Make the tool display feel like the hero */
 #clock, #timerDisplay, #stopwatchDisplay{
-  font-size: clamp(2.2rem, 7vw, 3.2rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-weight: 800;
   letter-spacing: 0.02em;
+  line-height: 1.05;
   margin: 0 0 var(--space-4);
+  font-variant-numeric: tabular-nums;
 }
+
 
 /* Inputs and buttons (tap-friendly) */
 input, button{
